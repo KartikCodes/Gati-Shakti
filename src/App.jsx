@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useAuth, AuthProvider } from './context/AuthContext';
 import { 
   defaultProjects, 
@@ -322,6 +323,7 @@ export default function App() {
   return (
     <AuthProvider>
       <MainApp />
+      <SpeedInsights />
     </AuthProvider>
   );
 }
