@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useAuth, AuthProvider } from './context/AuthContext';
+import { Toaster } from 'react-hot-toast';
 import { 
   defaultProjects, 
   calculateConflicts, 
@@ -321,6 +322,32 @@ function MainApp() {
 export default function App() {
   return (
     <AuthProvider>
+      <Toaster 
+        position="top-center"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            fontFamily: 'var(--font-sans)',
+            fontSize: '0.85rem',
+            fontWeight: '500',
+            borderRadius: '10px',
+            padding: '12px 16px',
+            boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+          },
+          success: {
+            iconTheme: {
+              primary: '#10B981',
+              secondary: '#FFFFFF',
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: '#EF4444',
+              secondary: '#FFFFFF',
+            },
+          },
+        }}
+      />
       <MainApp />
     </AuthProvider>
   );

@@ -119,10 +119,10 @@ export default function Sidebar({ currentTab, setCurrentTab, criticalConflictsCo
                 overflow: 'hidden',
                 textOverflow: 'ellipsis'
               }}>
-                {user.isAdmin ? 'Administrator' : getDeptLabel(user.department)}
+                {user.name || (user.isAdmin ? 'Administrator' : getDeptLabel(user.department))}
               </span>
-              <span style={{ fontSize: '0.65rem', color: '#94A3B8' }}>
-                {user.isAdmin ? 'Full System Access' : 'Dept. Planner'}
+              <span style={{ fontSize: '0.65rem', color: '#94A3B8', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {user.email || (user.isAdmin ? 'Full System Access' : 'Dept. Planner')}
               </span>
             </div>
           </div>
