@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useAuth, AuthProvider } from './context/AuthContext';
 import { Toaster } from 'react-hot-toast';
 import { 
@@ -349,6 +350,7 @@ export default function App() {
         }}
       />
       <MainApp />
+      <SpeedInsights />
     </AuthProvider>
   );
 }
